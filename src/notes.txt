@@ -1,0 +1,66 @@
+================================
+Course Content:
+================================
+Component and Databinding
+Directive
+Services and Dependecy injections
+Routing
+Observables
+Forms
+Pipes
+Http
+Authentication
+Optimization and NgModules
+Deployment
+Animations and Testing
+======================================================================
+Docs+ Google
+======================================================================
+Typescript:
+It is superset of Javascript. More features then javascript, eg Types,Classes,Interfaces etc
+Typescript Compiled to Javascript
+========================================================================================
+Sections 2:
+Basis:
+How angular apps gets loaded?
+
+index.html -> calls app component selector i.e; <app-root></app-root>
+The bundle of the all the JS files in done.
+In main.ts bootstraps the AppModule.
+AppModules then bootstraps the AppComponent
+
+========================================================================================
+Component It is key fetaure of angular
+
+Making an angular sample app
+npm install -g @angular/cli   (If Angular CLI is not installed)
+ng new my-dream-app
+cd my-dream-app
+ng serve
+
+=======================================================================================
+Module in Angular refers to a place where you can group the 
+components, directives, pipes, and services, which are related to the application.
+
+In case you are developing a website, the header, footer, left, center and the right section 
+become part of a module.
+
+To define module, we can use the NgModule. When you create a new project using the Angular –cli command,
+ the ngmodule is created in the app.module.ts file by default
+=======================================================================================
+Data binding in Angular :
+1) Output Data (from Typescript[Business Logic] to Tempalate[HTML])
+Ex: String interpolation {{data}}
+Property Binding : [property] = "data"
+
+2) Event Binding(React to User Event) :
+(event) = "expression"
+
+3) Combination of two way binding :
+[(ngModel)]="data"
+=======================================================================================
+
+
+
+
+
