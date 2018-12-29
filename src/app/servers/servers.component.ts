@@ -34,20 +34,17 @@ export class ServersComponent implements OnInit {
     console.log("serverCreation "+this.serverName2.length);
     //server 1 creation logic
     if(this.serverName1.length == 0){
-      this.server1CreationStatus = "Need to create server1";
+      this.displayServer1CreationStatus = false;
     }
     else{
-      //this.displayServer1CreationStatus = true;
-      this.server1CreationStatus = "Server1 created with server name "+this.serverName1;
+      this.displayServer1CreationStatus = true;
     }
     //server 2 creation logic
     if(this.serverName2.length > 0){
-      this.displayServerCreationStatus = true;
       this.server2CreationStatus = "Server Created and the server name is " + this.serverName2;
     }
     else if(this.serverName2.length == 0){
-      this.displayServerCreationStatus = false;
-      this.server2CreationStatus = "Server was not created!!";
+      this.server2CreationStatus = "Server 2 not created!!";
     }
     
   }

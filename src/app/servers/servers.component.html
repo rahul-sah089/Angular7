@@ -1,3 +1,4 @@
+<hr/>
 <div class="container">
     <div class="jumbotron">
         <input type="text" class="form-control" (input)="onUpdateServerName($event)" />
@@ -8,8 +9,11 @@
         <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onSeverCreation()">Add Server</button>
         <!--<p>Allow new server value <b>{{allowNewServer}}</b></p>-->
         <p [innerText]="allowNewServer"></p>
-        <p>{{server1CreationStatus}}</p>
-        <p *ngIf="displayServerCreationStatus">{{server2CreationStatus}}</p>
+        <p *ngIf="displayServer1CreationStatus; else noServer">Server1 create with server name {{serverName1}} </p>
+        <ng-template #noServer>
+            <p>Server 1 not created!!!</p>
+        </ng-template>
+        <p>{{server2CreationStatus}}</p>
     </div>
 </div>
 <hr />
