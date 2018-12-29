@@ -15,7 +15,7 @@
         </ng-template>
         <p>{{server2CreationStatus}}</p>
         <hr/>
-        <app-server></app-server>
+        <app-server *ngFor="let server of servers"></app-server>
     </div>
 </div>
 

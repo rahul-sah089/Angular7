@@ -19,6 +19,7 @@ export class ServersComponent implements OnInit {
   serverName2 = "Test Server";
   userName = "";
   password = "";
+  servers = ["server1"];
   displayServerCreationStatus = false;
   showUserName = false;
   showPassword = false;
@@ -31,7 +32,6 @@ export class ServersComponent implements OnInit {
   }
 
   onSeverCreation() {
-    console.log("serverCreation "+this.serverName2.length);
     //server 1 creation logic
     if(this.serverName1.length == 0){
       this.displayServer1CreationStatus = false;
@@ -45,7 +45,9 @@ export class ServersComponent implements OnInit {
     }
     else if(this.serverName2.length == 0){
       this.server2CreationStatus = "Server 2 not created!!";
+      return;
     }
+    this.servers.push(this.serverName2);
     
   }
 
