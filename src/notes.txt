@@ -49,6 +49,7 @@ To define module, we can use the NgModule. When you create a new project using t
  the ngmodule is created in the app.module.ts file by default
 =======================================================================================
 Data binding in Angular :
+
 1) Output Data (from Typescript[Business Logic] to Tempalate[HTML])
 Ex: String interpolation {{data}}
 Property Binding : [property] = "data"
@@ -58,6 +59,16 @@ Property Binding : [property] = "data"
 
 3) Combination of two way binding :
 [(ngModel)]="data"
+
+Combination of property and event based binding 
+
+
+Important: For Two-Way-Binding (covered in the next lecture) to work, you need to enable the ngModel  
+directive. This is done by adding the FormsModule  to the imports[]  array in the AppModule.
+
+You then also need to add the import from @angular/forms  in the app.module.ts file:
+
+import { FormsModule } from '@angular/forms'; 
 =======================================================================================
 
 
