@@ -1,7 +1,7 @@
 <input type="text" class="form-control" (input)="onUpdateServerName($event)" />
 <p>{{serverName1}}</p>
 <br />
-<input type="text" class="form-control" [(ngModel)]="serverName2"/>
+<input type="text" class="form-control" [(ngModel)]="serverName2" />
 <p>{{serverName2}}</p>
 <br />
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onSeverCreation()">Add Server</button>
@@ -9,4 +9,27 @@
 <p [innerText]="allowNewServer"></p>
 <p>{{serverCreationStatus}}</p>
 <app-server></app-server>
-<hr/>
+<hr />
+<!-------Example of the data binding example------------------------------->
+<div class="container">
+    <div class="jumbotron">
+        <div class="form-group">
+            <label>Email Id</label>
+            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="userName" />
+            <small id="emailHelp" class="form-text text-muted">We will never share your email id with anyone else</small>
+            <br/>
+            <small id="emailIncorrect" [hidden]="!showUserName" class="form-text text-muted">Email is required</small>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" />
+            <small id="passwordIncorrect" [hidden]="!showPassword" class="form-text text-muted">Password is required</small>
+            
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label">Check me out</label>
+        </div>
+        <button class="btn btn-primary" (click)="login()">Login</button>
+    </div>
+</div>
