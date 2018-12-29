@@ -1,14 +1,17 @@
-<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
-<p>{{serverName1}}</p>
-<br />
-<input type="text" class="form-control" [(ngModel)]="serverName2" />
-<p>{{serverName2}}</p>
-<br />
-<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onSeverCreation()">Add Server</button>
-<p>Allow new server value <b>{{allowNewServer}}</b></p>
-<p [innerText]="allowNewServer"></p>
-<p>{{serverCreationStatus}}</p>
-<app-server></app-server>
+<div class="container">
+    <div class="jumbotron">
+        <input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+        <p>{{serverName1}}</p>
+        <br />
+        <input type="text" class="form-control" [(ngModel)]="serverName2" />
+        <br />
+        <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onSeverCreation()">Add Server</button>
+        <!--<p>Allow new server value <b>{{allowNewServer}}</b></p>-->
+        <p [innerText]="allowNewServer"></p>
+        <p>{{server1CreationStatus}}</p>
+        <p *ngIf="displayServerCreationStatus">{{server2CreationStatus}}</p>
+    </div>
+</div>
 <hr />
 <!-------Example of the data binding example------------------------------->
 <div class="container">
@@ -17,14 +20,14 @@
             <label>Email Id</label>
             <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="userName" />
             <small id="emailHelp" class="form-text text-muted">We will never share your email id with anyone else</small>
-            <br/>
+            <br />
             <small id="emailIncorrect" [hidden]="!showUserName" class="form-text text-muted">Email is required</small>
         </div>
         <div class="form-group">
             <label>Password</label>
             <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" />
             <small id="passwordIncorrect" [hidden]="!showPassword" class="form-text text-muted">Password is required</small>
-            
+
         </div>
         <div class="form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">

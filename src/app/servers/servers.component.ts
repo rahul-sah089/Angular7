@@ -12,11 +12,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
   allowNewServer: boolean = false;
-  serverCreationStatus: String = "No server was createds";
+  server1CreationStatus : String = "";
+  server2CreationStatus: String = "";
+  displayServer1CreationStatus = false;
   serverName1 = "";
   serverName2 = "Test Server";
   userName = "";
   password = "";
+  displayServerCreationStatus = false;
   showUserName = false;
   showPassword = false;
   constructor() {
@@ -28,7 +31,25 @@ export class ServersComponent implements OnInit {
   }
 
   onSeverCreation() {
-    this.serverCreationStatus = "Server Created and the server name is " + this.serverName2;
+    console.log("serverCreation "+this.serverName2.length);
+    //server 1 creation logic
+    if(this.serverName1.length == 0){
+      this.server1CreationStatus = "Need to create server1";
+    }
+    else{
+      //this.displayServer1CreationStatus = true;
+      this.server1CreationStatus = "Server1 created with server name "+this.serverName1;
+    }
+    //server 2 creation logic
+    if(this.serverName2.length > 0){
+      this.displayServerCreationStatus = true;
+      this.server2CreationStatus = "Server Created and the server name is " + this.serverName2;
+    }
+    else if(this.serverName2.length == 0){
+      this.displayServerCreationStatus = false;
+      this.server2CreationStatus = "Server was not created!!";
+    }
+    
   }
 
   login() {

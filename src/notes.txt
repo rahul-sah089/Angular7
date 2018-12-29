@@ -70,7 +70,18 @@ You then also need to add the import from @angular/forms  in the app.module.ts f
 
 import { FormsModule } from '@angular/forms'; 
 =======================================================================================
+Directive
+.......................................................................................
+Directive are instruction in DOM!!
+Directive in Angular is a js class, which is declared as @directive.
+We have 3 types of directives  in Angular. The directive are listed  below:
 
+1) Component Directive =>  Main class having thr details of how the component should be processed,
+instantained an used in runtime
+2) Structural  Directive =>  Basically this type of directive deals with the manupulating the DOM
+elements. Structural  directive have sign * before  it.
+For example :* ngIf and *ngFor
+3) Attribute Directive => Basically deals with changing the look and behavious of DOM element
 
 
 
