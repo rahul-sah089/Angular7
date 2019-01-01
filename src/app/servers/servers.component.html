@@ -1,4 +1,4 @@
-<hr/>
+<hr />
 <div class="container">
     <div class="jumbotron">
         <input type="text" class="form-control" (input)="onUpdateServerName($event)" />
@@ -14,7 +14,7 @@
             <p>Server 1 not created!!!</p>
         </ng-template>
         <p>{{server2CreationStatus}}</p>
-        <hr/>
+        <hr />
         <app-server *ngFor="let server of servers"></app-server>
     </div>
 </div>
@@ -43,3 +43,7 @@
         <button class="btn btn-primary" (click)="login()">Login</button>
     </div>
 </div>
+
+<!--Component and data binding-->
+<data-binding></data-binding>
+

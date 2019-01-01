@@ -15,6 +15,8 @@ export class ServersComponent implements OnInit {
   server1CreationStatus : String = "";
   server2CreationStatus: String = "";
   displayServer1CreationStatus = false;
+  displayParagraph = true;
+  buttonClicks = [];
   serverName1 = "";
   serverName2 = "Test Server";
   userName = "";
@@ -74,6 +76,17 @@ export class ServersComponent implements OnInit {
     //alert("update server called");
     console.log(values);
     this.serverName1 = (<HTMLInputElement>values.target).value;
+  }
+
+  toogleInfo(){
+    this.displayParagraph = !this.displayParagraph;
+    this.buttonClicks.push(new Date());
+  }
+
+  getClickColor(){
+    if(this.buttonClicks.length > 5){
+      return 'blue';
+    }
   }
 
 }

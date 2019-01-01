@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="jumbotron">
+        <h3>Add App Server or Server BluePrint</h3>
+        <div class="form-group">
+            <label>Server Name</label>
+            <input type="text" class="form-control" aria-describedby="serverName" placeholder="Enter Server Name"
+                [(ngModel)]="serverName" />
+        </div>
+        <div class="form-group">
+            <label>Server Content</label>
+            <input type="password" class="form-control" placeholder="server content" [(ngModel)]="serverContent" />
+            <small id="passwordIncorrect" [hidden]="!showPassword" class="form-text text-muted">Password is required</small>
+
+        </div>
+        <button class="btn btn-success btn-margin" (click)="addServer()">Add Server</button>
+        <button class="btn btn-primary btn-margin" (click)="addServerBluePrint()">Add Server BluePrint</button>
+    </div>
+</div>
+
+<div class="container" *ngIf= "displayServer">
+    <div class="jumbotron">
+        <h2>Server Info</h2>
+        <span *ngFor="let server of server">
+            <div>
+                ServerName : {{server.serverName}}
+            </div>
+            <div>
+                ServerContent : {{server.serverContent}}
+            </div>
+        </span>
+    </div>
+</div>
+
+<div class="container" *ngIf= "diplayServerBluePrint">
+    <div class="jumbotron">
+        <span *ngFor="let server of serverBluePrint">
+            <h2>Server Blueprint Info</h2>
+            <div>
+                ServerName : {{server.serverName}}
+            </div>
+            <div>
+                ServerContent : {{server.serverContent}}
+            </div>
+        </span>
+    </div>
+</div>
