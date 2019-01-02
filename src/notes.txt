@@ -82,6 +82,25 @@ instantained an used in runtime
 elements. Structural  directive have sign * before  it.
 For example :* ngIf and *ngFor
 3) Attribute Directive => Basically deals with changing the look and behavious of DOM element
+=====================================================================================================
+Property and Event Bidning:
+
+Property and Event handling can be used in the following:
+1) HTML elements => Native Properties and Events
+2) Directives => Custom Properties and Events
+3) Components => Custom Properties and Events
+
+===================================================================================================
+Binding to Custom Proerties(Parent child, sibling communication):
+You can pass values from a parent to child to [property binding] in the parent and @Input() in the child
+You can pass values from a child to parent using(event binding) in the parent and @Output() in the child
+
+A direct parent/child relationship of two components is established by the fact that the selector
+of the child component is placed somwehere in the template of the parent component
+
+Since CockpitComponent and ServerElementComponent are siblings,they have to communicate via their Parent
+(AppComponent as long as we dont use a service for communication)
+
 
 
 
